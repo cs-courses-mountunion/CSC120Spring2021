@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>MUFrame.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500' rel='stylesheet' type='text/css'>
+<style type="text/css">
+body {color: #000000; background-color: #ffffff; font-family: 'Source Code Pro:500', Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.comment {color: #969696}
+.line-number {background-color: #e9e8e2}
+.ST1 {color: #969696; font-family: Monospaced; font-weight: bold}
+.character {color: #ce7b00}
+.ST0 {color: #ce7b00; font-family: Monospaced; font-weight: bold}
+.keyword-directive {color: #0000e6}
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">H:\CSC120\Java\lec33_summaxmin\src\MUFrame.java</td></tr></table>
+<pre>
+<span class="line-number">  1</span> <span class="comment">/* CSC 120 Lecture # 33</span>
+<span class="line-number">  2</span> <span class="comment"> *</span>
+<span class="line-number">  3</span> <span class="comment"> * Finding sum, avg, min and max of a numeric array</span>
+<span class="line-number">  4</span> <span class="comment"> *</span>
+<span class="line-number">  5</span> <span class="comment"> */</span>
+<span class="line-number">  6</span> 
+<span class="line-number">  7</span> <span class="keyword-directive">import</span> java.awt.*;
+<span class="line-number">  8</span> <span class="keyword-directive">import</span> javax.swing.*;
+<span class="line-number">  9</span> 
+<span class="line-number"> 10</span> <span class="keyword-directive">public</span> <span class="keyword-directive">class</span> MUFrame <span class="keyword-directive">extends</span> javax.swing.JFrame {
+<span class="line-number"> 11</span> 
+<span class="line-number"> 12</span>     <span class="comment">// declare private data here</span>
+<span class="line-number"> 13</span>     
+<span class="line-number"> 14</span>     <span class="keyword-directive">private</span> Double[] arr;
+<span class="line-number"> 15</span>     
+<span class="line-number"> 16</span>     
+<span class="line-number"> 17</span>     <span class="comment">// constructor method</span>
+<span class="line-number"> 18</span>     <span class="keyword-directive">public</span> MUFrame() {
+<span class="line-number"> 19</span>         initComponents();
+<span class="line-number"> 20</span>         
+<span class="line-number"> 21</span>         arr = <span class="keyword-directive">new</span> Double[7];
+<span class="line-number"> 22</span>         
+<span class="line-number"> 23</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i = 0; i &lt; arr.length; i++) {
+<span class="line-number"> 24</span>             arr[i] = (i-3)*(i-3) + i/10.0;
+<span class="line-number"> 25</span>             outputArea.append(<span class="character">&quot;</span><span class="character">arr[</span><span class="character">&quot;</span> + i + <span class="character">&quot;</span><span class="character">] = </span><span class="character">&quot;</span> + arr[i] + <span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 26</span>         } <span class="comment">// end for</span>
+<span class="line-number"> 27</span>         
+<span class="line-number"> 28</span>         
+<span class="line-number"> 29</span>         <span class="comment">// find sum</span>
+<span class="line-number"> 30</span>         Double sum = 0.0;
+<span class="line-number"> 31</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i = 0; i &lt; arr.length; i++) {
+<span class="line-number"> 32</span>             sum = sum + arr[i];
+<span class="line-number"> 33</span>             outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">      (sum so far = </span><span class="character">&quot;</span> + sum + <span class="character">&quot;</span><span class="character">)</span><span class="character">&quot;</span>);
+<span class="line-number"> 34</span>         } <span class="comment">// end for</span>
+<span class="line-number"> 35</span>         outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 36</span>         outputArea.append(<span class="character">&quot;</span><span class="character">   The sum of all array elements is </span><span class="character">&quot;</span> + sum);
+<span class="line-number"> 37</span> 
+<span class="line-number"> 38</span>         
+<span class="line-number"> 39</span>         <span class="comment">// find average</span>
+<span class="line-number"> 40</span>         <span class="comment">// first, find sum, then:</span>
+<span class="line-number"> 41</span>         Double avg = sum / arr.length;
+<span class="line-number"> 42</span>         outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 43</span>         outputArea.append(<span class="character">&quot;</span><span class="character">   The average of all array elements is </span><span class="character">&quot;</span> + avg);
+<span class="line-number"> 44</span>         
+<span class="line-number"> 45</span>         
+<span class="line-number"> 46</span>         <span class="comment">// find max</span>
+<span class="line-number"> 47</span>         Double max = arr[0];
+<span class="line-number"> 48</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i = 0; i &lt; arr.length; i++) {
+<span class="line-number"> 49</span>             <span class="keyword-directive">if</span> (arr[i] &gt; max) {
+<span class="line-number"> 50</span>                 max = arr[i];
+<span class="line-number"> 51</span>             } <span class="comment">// end if</span>
+<span class="line-number"> 52</span>             outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">       (i = </span><span class="character">&quot;</span> + i + <span class="character">&quot;</span><span class="character">, max so far = </span><span class="character">&quot;</span> + max + <span class="character">&quot;</span><span class="character">)</span><span class="character">&quot;</span>);
+<span class="line-number"> 53</span>         } <span class="comment">// end for</span>
+<span class="line-number"> 54</span>         outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 55</span>         outputArea.append(<span class="character">&quot;</span><span class="character">   The maximum of all array elements is </span><span class="character">&quot;</span> + max);
+<span class="line-number"> 56</span>         
+<span class="line-number"> 57</span>         
+<span class="line-number"> 58</span>         <span class="comment">// find min</span>
+<span class="line-number"> 59</span>         Double min = arr[0];
+<span class="line-number"> 60</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i = 0; i &lt; arr.length; i++) {
+<span class="line-number"> 61</span>             <span class="keyword-directive">if</span> (arr[i] &lt; min) {
+<span class="line-number"> 62</span>                 min = arr[i];
+<span class="line-number"> 63</span>             } <span class="comment">// end if</span>
+<span class="line-number"> 64</span>             outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">       (i = </span><span class="character">&quot;</span> + i + <span class="character">&quot;</span><span class="character">, min so far = </span><span class="character">&quot;</span> + min + <span class="character">&quot;</span><span class="character">)</span><span class="character">&quot;</span>);
+<span class="line-number"> 65</span>         } <span class="comment">// end for</span>
+<span class="line-number"> 66</span>         outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 67</span>         outputArea.append(<span class="character">&quot;</span><span class="character">   The minimum of all array elements is </span><span class="character">&quot;</span> + min);
+<span class="line-number"> 68</span>         outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="ST0">\n</span><span class="character">-------------------------</span><span class="ST0">\n</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 69</span>         
+<span class="line-number"> 70</span>         
+<span class="line-number"> 71</span>         
+<span class="line-number"> 72</span>         
+<span class="line-number"> 73</span>         processSoccerStats();
+<span class="line-number"> 74</span>         
+<span class="line-number"> 75</span>     } <span class="comment">// end of constructor</span>
+<span class="line-number"> 76</span>     
+<span class="line-number"> 77</span>     <span class="comment">// declare other methods here</span>
+<span class="line-number"> 78</span>     
+<span class="line-number"> 79</span>     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> processSoccerStats() {
+<span class="line-number"> 80</span>         
+<span class="line-number"> 81</span>         SoccerTeam[] team;
+<span class="line-number"> 82</span>         team = <span class="keyword-directive">new</span> SoccerTeam[7];
+<span class="line-number"> 83</span>         team[0] = <span class="keyword-directive">new</span> SoccerTeam(2019, 8, 10);
+<span class="line-number"> 83</span>         team[1] = <span class="keyword-directive">new</span> SoccerTeam(2018, 12, 7);
+<span class="line-number"> 84</span>         team[2] = <span class="keyword-directive">new</span> SoccerTeam(2017, 12, 6);
+<span class="line-number"> 85</span>         team[3] = <span class="keyword-directive">new</span> SoccerTeam(2016, 11, 6);
+<span class="line-number"> 86</span>         team[4] = <span class="keyword-directive">new</span> SoccerTeam(2015, 8, 9);
+<span class="line-number"> 87</span>         team[5] = <span class="keyword-directive">new</span> SoccerTeam(2014, 4, 14);
+<span class="line-number"> 88</span>         team[6] = <span class="keyword-directive">new</span> SoccerTeam(2013, 5, 13);
+<span class="line-number"> 89</span>         
+<span class="line-number"> 90</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> t = 0; t &lt; team.length; t++) {
+<span class="line-number"> 91</span>             outputArea.append(team[t].toString() + <span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number"> 92</span>         }
+<span class="line-number"> 93</span> 
+<span class="line-number"> 94</span>         
+<span class="line-number"> 95</span>         Integer totWins, minWins, maxLosses;
+<span class="line-number"> 96</span>         Double avgWins;
+<span class="line-number"> 97</span>         
+<span class="line-number"> 98</span>         totWins = 0;
+<span class="line-number"> 99</span>         minWins = team[0].getWins();
+<span class="line-number">100</span>         maxLosses = team[0].getLosses();
+<span class="line-number">101</span>         
+<span class="line-number">102</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> t = 0; t &lt; team.length; t++) {
+<span class="line-number">103</span>             totWins += team[t].getWins();
+<span class="line-number">104</span>             
+<span class="line-number">105</span>             <span class="keyword-directive">if</span> ( team[t].getWins() &lt; minWins ) {
+<span class="line-number">106</span>                 minWins = team[t].getWins();
+<span class="line-number">107</span>             } <span class="comment">// end if</span>
+<span class="line-number">108</span>             
+<span class="line-number">109</span>             <span class="keyword-directive">if</span> ( team[t].getLosses() &gt; maxLosses ) {
+<span class="line-number">110</span>                 maxLosses = team[t].getLosses();
+<span class="line-number">111</span>             } <span class="comment">// end if</span>
+<span class="line-number">112</span>         } <span class="comment">// end for</span>
+<span class="line-number">113</span>         
+<span class="line-number">114</span>         avgWins = 1.0 * totWins / team.length;
+<span class="line-number">115</span>         
+<span class="line-number">116</span>         outputArea.append(<span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number">117</span>         outputArea.append(<span class="character">&quot;</span><span class="character">  Total Wins in array = </span><span class="character">&quot;</span> + totWins + <span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number">118</span>         outputArea.append(<span class="character">&quot;</span><span class="character">  Average Wins in array = </span><span class="character">&quot;</span> + avgWins + <span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number">119</span>         outputArea.append(<span class="character">&quot;</span><span class="character">  Minimum Wins in array = </span><span class="character">&quot;</span> + minWins + <span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number">120</span>         outputArea.append(<span class="character">&quot;</span><span class="character">  Maximum Losses in array = </span><span class="character">&quot;</span> + maxLosses + <span class="character">&quot;</span><span class="ST0">\n</span><span class="character">&quot;</span>);
+<span class="line-number">121</span>         
+<span class="line-number">122</span>     } <span class="comment">// end of processSoccerStats()</span>
+<span class="line-number">123</span>     
+<span class="line-number">124</span> 
+<span class="line-number">125</span>     <span class="comment">/**</span> <span class="comment">This</span> <span class="comment">method</span> <span class="comment">is</span> <span class="comment">called</span> <span class="comment">from</span> <span class="comment">within</span> <span class="comment">the</span> <span class="comment">constructor</span> <span class="comment">to</span>
+<span class="line-number">126</span> <span class="comment">     * </span><span class="comment">initialize</span> <span class="comment">the</span> <span class="comment">form</span><span class="comment">.</span>
+<span class="line-number">127</span> <span class="comment">     * </span><span class="comment">WARNING</span><span class="comment">: </span><span class="comment">Do</span> <span class="comment">NOT</span> <span class="comment">modify</span> <span class="comment">this</span> <span class="comment">code</span><span class="comment">.</span> <span class="comment">The</span> <span class="comment">content</span> <span class="comment">of</span> <span class="comment">this</span> <span class="comment">method</span> <span class="comment">is</span>
+<span class="line-number">128</span> <span class="comment">     * </span><span class="comment">always</span> <span class="comment">regenerated</span> <span class="comment">by</span> <span class="comment">the</span> <span class="comment">Form</span> <span class="comment">Editor</span><span class="comment">.</span>
+<span class="line-number">129</span>      <span class="comment">*/</span>
+<span class="line-number">130</span>     @SuppressWarnings(<span class="character">&quot;</span><span class="character">unchecked</span><span class="character">&quot;</span>)
+<span class="line-number">131</span>     <span class="comment">// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;                          </span>
+<span class="line-number">132</span>     <span class="keyword-directive">private</span> <span class="keyword-directive">void</span> initComponents() {
+<span class="line-number">133</span> 
+<span class="line-number">134</span>         jScrollPane1 = <span class="keyword-directive">new</span> javax.swing.JScrollPane();
+<span class="line-number">135</span>         outputArea = <span class="keyword-directive">new</span> javax.swing.JTextArea();
+<span class="line-number">136</span> 
+<span class="line-number">137</span>         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<span class="line-number">138</span> 
+<span class="line-number">139</span>         outputArea.setColumns(20);
+<span class="line-number">140</span>         outputArea.setRows(5);
+<span class="line-number">141</span>         jScrollPane1.setViewportView(outputArea);
+<span class="line-number">142</span> 
+<span class="line-number">143</span>         javax.swing.GroupLayout layout = <span class="keyword-directive">new</span> javax.swing.GroupLayout(getContentPane());
+<span class="line-number">144</span>         getContentPane().setLayout(layout);
+<span class="line-number">145</span>         layout.setHorizontalGroup(
+<span class="line-number">146</span>             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<span class="line-number">147</span>             .addGroup(layout.createSequentialGroup()
+<span class="line-number">148</span>                 .addGap(20, 20, 20)
+<span class="line-number">149</span>                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+<span class="line-number">150</span>                 .addContainerGap())
+<span class="line-number">151</span>         );
+<span class="line-number">152</span>         layout.setVerticalGroup(
+<span class="line-number">153</span>             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<span class="line-number">154</span>             .addGroup(layout.createSequentialGroup()
+<span class="line-number">155</span>                 .addContainerGap()
+<span class="line-number">156</span>                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+<span class="line-number">157</span>                 .addContainerGap(32, Short.MAX_VALUE))
+<span class="line-number">158</span>         );
+<span class="line-number">159</span> 
+<span class="line-number">160</span>         pack();
+<span class="line-number">161</span>     }<span class="comment">// &lt;/editor-fold&gt;                        </span>
+<span class="line-number">162</span> 
+<span class="line-number">163</span>     <span class="comment">/**</span>
+<span class="line-number">164</span> <span class="comment">     * </span><span class="ST1">@param</span> <span class="comment">args</span> <span class="comment">the</span> <span class="comment">command</span> <span class="comment">line</span> <span class="comment">arguments</span>
+<span class="line-number">165</span>      <span class="comment">*/</span>
+<span class="line-number">166</span>     <span class="keyword-directive">public</span> <span class="keyword-directive">static</span> <span class="keyword-directive">void</span> main(String args[]) {
+<span class="line-number">167</span>         java.awt.EventQueue.invokeLater(<span class="keyword-directive">new</span> Runnable() {
+<span class="line-number">168</span> 
+<span class="line-number">169</span>             <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> run() {
+<span class="line-number">170</span>                 <span class="keyword-directive">new</span> MUFrame().setVisible(<span class="keyword-directive">true</span>);
+<span class="line-number">171</span>             }
+<span class="line-number">172</span>         });
+<span class="line-number">173</span>     }
+<span class="line-number">174</span>     <span class="comment">// Variables declaration - do not modify                     </span>
+<span class="line-number">175</span>     <span class="keyword-directive">private</span> javax.swing.JScrollPane jScrollPane1;
+<span class="line-number">176</span>     <span class="keyword-directive">private</span> javax.swing.JTextArea outputArea;
+<span class="line-number">177</span>     <span class="comment">// End of variables declaration                   </span>
+<span class="line-number">178</span> }
+<span class="line-number">179</span> 
+<span class="line-number">180</span> 
+</pre></body>
+</html>
