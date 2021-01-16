@@ -34,8 +34,23 @@ public class MUPanel extends JPanel {
         // The house
         g.setColor(Color.BLACK);
         g.drawRect(200, 150, 200, 100);
-    
+		
+        // The roof
+
+
+		// The window
+        g.setColor(Color.YELLOW);
+        g.fillRect(225, 180, 90, 40);
+        g.setColor(Color.BLACK);
+        g.drawRect(225, 180, 90, 40);
+		
+		
+        // The door and doorknob
+
+
+
         // The tree
+
     
         // The sun
 
