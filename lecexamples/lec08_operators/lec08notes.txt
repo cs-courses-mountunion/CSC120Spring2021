@@ -1,4 +1,48 @@
 
+Methods in a Class Definition
+=============================
+
+   Two styles of methods:
+
+      (1)  command-style methods -- used to ask an object to do something without expecting
+                                    an answer to be returned
+
+                  ex.  g.fillRect(12, 23, 34, 45);
+
+                       myBoat.draw(g);
+
+
+              called void methods  --  there is no data being returned as the answer from
+                                       the method, so the data type of the answer is void
+
+              called from the main program on a separate line
+
+
+      (2)   question-style methods -- used to ask an object to return an answer
+
+                  ex.  answer = Math.sqrt(100.0);
+
+                       System.out.println( myYacht.toString() );
+
+              called type-returning methods  --  the method will return an answer to us that
+                                                 is a specific data type
+
+              called from the main program as part of a larger statement
+
+              must include a return statement to send answer back to caller
+
+
+Common methods in Class Definitions
+===================================
+
+    toString -- purpose is to return a single text String showing all (or some) property values
+
+    "getter" methods -- purpose is to retrieve (get) the value of a property of an object
+
+    "setter" methods -- purpose is to store a new value (set) in a property of an object
+
+
+
 Data Types for Object Properties
 ================================
 
@@ -19,42 +63,6 @@ Data Types for Object Properties
             in the Java Class Hierarchy
 
     Balloon, Flag, SmileySun, Boat -- classes that we write
-
-
-
-Operators
-=========
-
-   Symbols that have meaning in a Java program
-
-   data type of the result of the operation depends upon the data
-          type(s) of the values being operated upon (the operands)
-
-   Integer operators (both operands are Integers; result is an Integer)
-   --------------------------------------------------------------------
-
-      +  :  addition
-
-      -  :  subtraction
-
-      *  :  multiplication
-
-      /  :  integer division
-
-      %  :  remainder
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
