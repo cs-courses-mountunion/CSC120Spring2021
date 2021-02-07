@@ -14,6 +14,9 @@ import java.awt.*;
 import javax.swing.*;
 
 public class MUPanel extends JPanel {
+	
+	private Integer a, b, c, d, e, f;
+	
     public MUPanel() {
 	
         setLayout(null);
@@ -21,13 +24,20 @@ public class MUPanel extends JPanel {
         setName("CSC 120 Exam 1 Review Problem a");
         setBackground(Color.WHITE);
         
-        System.out.println("1. " + (47 / 9) );
+		a = 47;
+		b = a / 9;
+		c = a / 5;
+		d = a % 9;
+		e = a % 5;
+		f = (3 + 19) / 8;
+		
+        System.out.println("1. " + b );
 
-        System.out.println("2. " + (47 / 5) );
+        System.out.println("2. " + c );
 
-        System.out.println("3. " + ( 47 % 9 ) );
+        System.out.println("3. " + d );
 
-        System.out.println("4. " + ( 47 % 5 ) );
+        System.out.println("4. " + e );
 
         System.out.println("5. " + ( 3 + 19 / 8 ) );
 
@@ -35,7 +45,7 @@ public class MUPanel extends JPanel {
 
         System.out.println("7. " + ( 3 % 19 + 8 ) );
 
-        System.out.println("8. " + ( (3 + 19) / 8 ) );
+        System.out.println("8. " + f );
 
         System.out.println("9. " + ( 16 % 4 ) );
 
