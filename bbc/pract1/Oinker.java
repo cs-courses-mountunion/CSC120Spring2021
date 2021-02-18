@@ -7,11 +7,11 @@ public class Oinker {
     private Integer x, y, size;
 	
 	
-    public Oinker(Color c) {
+    public Oinker(Color c, Integer sz) {
         color = c;
         x = 0;
         y = 0;
-        size = 100;
+        size = sz;
     } // end of constructor
 
 	
