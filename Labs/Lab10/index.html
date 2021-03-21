@@ -1,198 +1,150 @@
-  <head>
-    <title>CSC 120 -- Lab 10</title>
-  </head>
-  <body>
-    <font color="#660066">
-        <h2 align="center">CSC 120 &nbsp; -- &nbsp; Lab 10</h2>
-    </font>
-	<p><b><font face="Arial">Practice writing methods that use loops to
-      process an array of <b>Car</b> objects.</font></b>
-	</p>
-	<p><b><font face="Arial"> <font size="+1">Note:&nbsp; You do NOT
-	  need to turn in this Lab 10 NetBeans project to the D2L dropbox, unless
-	  you were absent on the day we worked on it in class, or were not actually working on this lab
-	  activity during the class period when it was assigned.</font>&nbsp;
-	  You will probably want to come
-      back and finish the entire lab later as preparation for the
-      upcoming&nbsp;Exam.</font></b>
-	</p>
-	
-	<hr><br/>
-    
-	<ol type="A">
-      <li><b><font face="Arial">Get the beginning version of the program up and running.</font></b><br />
-        <br />
-        <ol>
-          <li>Create a new Netbeans project called <b>Lab10</b>.&nbsp; Make sure
-        the location is in your H:\CSC120\Java folder.<br />
-            <br />
-          </li>
-          <li>
-        Copy needed files into your <b>src</b> folder.&nbsp; In a
-          browser&nbsp; right click on each of <p>
-        <ul>
-          <li><b><a href="src/MUFrame.java">MUFrame.java</a></b></li>
-          <li><b><a href="src/Car.java">Car.java</a></b></li>
-        </ul>
-        <p> and choose <b>Save Target As...</b> (or <span
-            style="font-weight: bold;">Save Link As ...) </span> to
-          save the files in the <span style="font-weight: bold;">src </span>folder
-          of your project.&nbsp; 
-            <br />
-          </li>
-          <li>Compile and run the <b>MUFrame.java</b> file to make sure your project is 
-	      set up properly.&nbsp; You should see two rows of 
-	      cars displayed in the graphics window, and a message in the Java Console that displays
-		  the speed of the fastest car in the each of the two arrays.<br/><br/>
-          </li>
-        </ol>
-      </li>
-      <li><b><font face="Arial">Examine at the <code>Car</code> and the <code>MUFrame</code> class definitions.</font></b><br />
-        <br />
-        <ol>
-          <li>You do not need to change
-      the <code><span style="font-weight: bold;">Car</span> </code>class
-      definition at all, but take a look at it now in the Netbeans editor window so you can see the
-      methods that "get" the <code>Car </code>data members.&nbsp; You will need to call these
-      "getter" methods to complete this lab activity. <br/><br/>
-          </li>
-          <li>Now take a look at the <code><b>MUFrame</b></code> class definition in the Netbeans
-		  editor.&nbsp; Notice that this program declares two different arrays of Car objects, and
-		  instantiates them with a different number of elements.&nbsp; Then each position in both arrays
-		  is instantiated with specific values. <br/><br/>
-		  The program then calls a method twice to display the speed of the fastest car in each array, and then skips a blank line.&nbsp; Then
-		  the program calls a different method twice to return the speed of the fastest car in each array, and skips a blank line.&nbsp; The
-		  methods themselves follow &ndash; you can use these as examples when solving the problems given in this lab.
-		  <br/><br/>
-          </li>
-        </ol>
-      </li>
-      <li><b><font face="Arial">Create and Test a <code>displayAllCars</code> Method.</font></b><br />
-        <br />
-        <ol>
-          <li>In <code>MUFrame</code>, write a simple version of the
-          method, that just does a <code>System.out.println() </code>of
-          the name of the method.&nbsp; It should look like this:
-<pre>
-public void displayAllCars( Car[] theArray ) {
+<html>
 
-    System.out.println("running the displayAllCars method...");
+    <head>
+        <title>CSC 120 Lab 10</title>
+    </head>
 
-} // end of displayAllCars()
-</pre>
-		  </li>
-          <li>Next, scroll to the constructor
-          method of <code>MUFrame</code> and call your new method.&nbsp; In
-          this case the line of code to do this in the constructor method would
-          be either <b><code>displayAllCars( domestic );</code></b> or 
-		  <b><code>displayAllCars( imported );</code></b><br/><br/>
-		  After doing this, call <b><code>displayABlankLine();</code></b> so that
-		  the output of the this method call will be visually separated from
-		  the rest of the output in the Java Console. <br/><br/>
-          </li>
-          <li>Then run the program and make sure it executes and displays
-          the method name in the Java Console correctly. <br />
-            <br />
-          </li>
-          <li>In <code>MUFrame</code>, replace the <code>System.out.println</code> statement
-		   in the body of the <code>displayAllCars</code> method with code that uses a <code>for</code> loop to
-		   perform the required computations that will display the desired output in the Java Console.&nbsp;
-		   Hint:&nbsp; the <code>Car</code> class has a <code>toString()</code> method defined that you
-		   should use to obtain the correct output for this method.<br />
-        <br />
-          </li>
-          <li>Finally, call this method in the <b>MUFrame</b> constructor twice, once for each array 
-		  of <code>Car</code> objects, and be sure to display a blank line between the two listings.<br />
-            <br />
-          </li>
-        </ol>
-      </li>
-	  
-      <li><b><font face="Arial">Create and Test Several Additional Methods that will process an 
-	         array of <code>Car</code> objects.</font></b><br />
-        <br />
-        <ol>
-          <li>You will work on this part of the lab activity in stages ... one method definition
-      and method call combination at a time.&nbsp; Use the sequence described in the previous instruction set
-	  for the <code>displayAllCars</code> method for each of the following methods.
-		  <br />
-            <br />
-			There are two styles of methods for you to write in this lab activity.&nbsp; Methods whose name starts with
-			"display" are supposed to use <code>System.out.println</code> statements to display their results
-			directly and immediately in the Java Console.&nbsp; Methods whose name starts with "return" should NOT
-			include any <code>System.out.println</code> statements, but should return their computed answer to 
-			the calling point via the use of a <code>return</code> statement.&nbsp; When a "return"-style method is 
-			called from the <code>MUFrame</code> constructor, it must be called from within a <code>System.out.println</code> statement.
-			<br/><br/>
-      Each of these
-      methods requires that an array of <code>Car</code> objects be passed into the
-      method as a parameter. You can write the methods in any order you
-      like, but get one working before starting on another. Although you
-      may not have time to finish all of the methods listed here, complete as
-      many as you can in the schedule lab time today, and finish the rest whenever you can. <br/><br/>
-          </li>
-          <li>Write and call a method named <code><b>displayAverageMPGFor</b></code> which will 
-		  display the average mpg for all objects in
-        the array in the Java
-        Console, in a format like this: "The average mpg of all Car objects is
-        25.875". &nbsp; 
-        Your answer should have a decimal point. If your answer is
-        something like 25 or 25.0, you need to do something to not
-        lose the fractional part of the average. <br/><br/>
-          </li>
-          <li>Write and call a method named <code><b>returnWorstMPGFor</b></code> which will return the worst (i.e., lowest) 
-		  miles per gallon (mpg) for any Car object in the array. <br />
-            <br />
-          </li>
-          <li>Write and call a method named <code><b>displayAboveAvgMPG</b> </code>that calculates and prints
-        the average MPG of all cars in the array in the Java Console, and then on the next several lines, 
-        displays the results of the <code>toString()</code> method for all objects in the array whose MPG
-        is above average.  Each above average MPG car should be displayed on a separate line in the Java Console.&nbsp;
-        Note that your method must use two separate loops to perform this task.
-        <br /><br />
-		Call this method in <b>MUFrame</b> twice, once for each array of Car objects, and be
-		sure to display a blank line after each of the two listings.<br />
-        <br />
-          </li>
-          <li>What if regulations concerning the way to calculate miles
-        per gallon, mpg, were changed and for every <code>Car</code> object, the mpg
-        value is to be reduced by 2 mpg.&nbsp; Write and call a method to
-        accomplish this task.&nbsp; In order to see the
-        results for this in the Java Console, call <code><b>displayAllCars</b></code>
-        before and after making the changes with this method.<br />
-        <br />
-          </li>
-          <li>We want to know the number of red cars in the array.&nbsp; Either we could write
-        and call a method that would count them and display a message in
-        the Java Console such as "There are 3 red cars." or we could
-        write a method that counts and returns the number of red cars
-        and use that method in a System.out.println in the <code>MUFrame</code>
-        constructor method. Do this both ways! Write and call both <b><code>displayNumberOfRedCars</code></b>
-        and <b><code>returnNumberOfRedCars.</code></b><br />
-        <br />
-        Remember that you cannot compare two objects with <code>==</code>,
-        so you must use the <code>.equals</code> method of the Color
-        class with something like this:
-        <pre>      if (theArray[i].getCarColor().equals(Color.RED))</pre>
-          </li>
-          <li>Write and call a method which finds the name of the car
-        with the fastest speed.&nbsp; In this case you need to go through the
-        loop and remember the position of the <code>Car</code> object for which the <b>mph</b>
-        data member is the highest. You will need two variables inside
-        the method, one to remember the highest <em>value</em> of <b>mph</b>
-        and the other to remember the corresponding <em>name</em>. Or,
-        just use an integer to remember the position/index of the one
-        with the highest mph, and after the loop use that index to get
-        the name. <br />
-        <br />
-        Can you do this both ways as <code><b>displayNameOfFastestCar</b></code>
-		and as <code><b>returnNameOfFastestCar</b></code>? One displays the answer 
-		and the other returns a <code>String</code> with the answer.
-		<br /><br />
-          </li>
-        </ol>
-      </li>
-	  
+    <body alink="#FF0000" bgcolor="#ffffff" link="#0000EE" text="#000000" vlink="#FF8800">
+
+    <h2 align="center"><font color="#990099">CSC 120 Lab 10</font></h2>
+
+    <p>In this lab we will practice using methods of the String class, as well as JLabels, JButtons,
+       JTextFields and JTextAreas.</p>
+
+    <ol type="A">
+
+	    <li><b>If you didn't do so before today's class</b>, watch 
+            <a href="StringDemoVideo01.mp4" target="_blank"> this video</a>
+            that introduces the <code>String</code> class and some of the methods that may be used
+			to process String data (<em>approx. 9 minutes in length</em>).<br /><br /></li>
+
+
+        <li><b>Get the beginning version of the program up and running.</b><br /><br />
+
+            <ol>
+
+                <li>Create a new Netbeans project called <b>Lab10</b>.
+                    Make sure the Location is in your H:\CSC120\Java folder.<br /><br />
+                </li>
+
+                <li>In your web browser, right click on
+                    <b><a href="MUFrame.java">MUFrame.java</a></b>
+                    and choose <b>Save Target As...</b> (or <b>Save Link As...)</b>
+                    and save the files in the <b>src</b> folder of your project.&nbsp; <br /><br />
+                </li>
+
+                <li>Compile and run the program to see how the interface looks.&nbsp; Then
+				    type some text in the
+                    input field and click the button to see the output.&nbsp; Then edit the
+					value you typed in the input field, and click the button again.&nbsp;
+                    Notice that the output JTextArea displays the results of
+					our processing, which is only one operation at this time.<br /><br />
+                </li>
+            </ol>
+        </li>
+
+        <li><b>Add more code to the program to produce more kinds of output.</b><br /><br />
+
+            <ol>
+                <li>Click <a href="lab10final.png" target="_blank">HERE</a>
+                    to see a sample finished version of this lab.<br /><br />
+                </li>
+
+                <li>When a user types something in the input field, then clicks the button,
+                    the program should produce all of the output shown in the example.<br /><br />
+                </li>
+
+                <li>Complete each of the other kinds of output <b>ONE AT A TIME.</b>
+                    Finish getting one working before you start working on the next one.
+                    For each of the other kinds of output shown in the sample output:<br /><br />
+
+                    <ul>
+
+                        <li>Add a method in the MUFrame class that will display output
+                            in the JTextArea.&nbsp; Use the <code>capitalizeInputText</code> method
+							as a pattern for your new methods.&nbsp;
+                            Try to figure out by yourself which method(s) from the String class
+                            you'll need to use to produce a new String for the desired output.
+                            If you get stuck, ask for help but only after looking at the
+<a href="String.html#method_summary" target="_blank">String class methods</a>.<br /><br />
+                            Hint:&nbsp; you may find it helpful to focus on these specific methods and operators of the String class 
+                            when working on code to generate the sample output produced in this lab assignment:
+							<br/><br/>
+							<b><i>Operators:</i></b>
+							<blockquote>
+							    +
+							</blockquote>
+							<b><i>Methods:</i></b>
+							<blockquote><font face="Courier New">
+    toUpperCase <br/>
+    toLowerCase <br/>
+    charAt <br/>
+    substring <br/>
+    length <br/>
+    indexOf <br/>
+							</font></blockquote>
+                        </li>
+
+                        <li>Add a line of code in the <code>processInputButtonActionPerformed</code>
+						    method of the <b>MUFrame</b> class to call the new method.<br /><br />
+                        </li>
+
+                        <li>Run your program and fix any problems.<br />
+                            <font color="red">Only add one new kind of output, then
+                            test &amp; fix, then add another, then test &amp; fix, etc.</font><br /><br />
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+
+        <!--li><b>Remove the JButton and convert the input JTextField to an active one.</b><br /><br />
+
+            <ol>
+
+                <li>Create a new Netbeans project called <b>Lab11a</b>.
+                    Make sure the Location is in your H:\CSC120\Java folder.<br /><br />
+                </li>
+
+                <li>Copy all of the files from the src folder of the <b>Lab11</b> project,
+                    and paste them into the src folder of the new <b>Lab11a</b> project. <br /><br />
+                </li>
+
+                <li>In the <b>MUPanel.java</b> file, edit the <code>MUPanel</code> class,
+                    changing the setName value to CSC 120 Lab11a.<br /><br />
+                </li>
+
+                <li>In the <b>MUPanel.java</b> file, edit the <code>MUPanel</code> class,
+                    commenting out the declaration and instantiation of the JButton
+                    in the <code>MUPanel</code> constructor method.
+                    You could delete these lines, but when you call addActionListener for the inputField
+                    (below), you may want to look at how you did that for the button.<br /><br />
+                </li>
+
+                <li>Change the String parameter used to instantiate the <code>instructionsLabel</code>
+                    object from "Type something here, then click the button" so that it is now
+                    "Type something here, then press Enter". <br /><br />
+                </li>
+
+                <li>Now add the ActionListener object that used to be attached to the JButton
+                    to the JTextField that accepts the input value. To do this, simply
+                    call the <code>addActionListener</code> method for the <code>inputField</code>
+                    object. The parameter passed to the <code>addActionListener</code>
+                    method should be <code> new ProcessListener()</code> &#8212; the
+                    same as with the JButton in the previous version of this program.<br /><br />
+                </li>
+
+                <li>Run your program and fix any problems. When you run the program,
+                    you should be able to generate output by simply typing a text string
+                    in the input field and pressing the <b>Enter</b> key.<br /><br />
+                </li>
+
+            </ol>
+        </li-->
+		<li> Submit your <b>Lab10</b> project as a .zip file to the 
+             <a href="http://d2l.mountunion.edu/" target="_blank"> D2L dropbox</a> for grading, as usual. </li>
     </ol>
-  </body>
+
+    </body>
+
 </html>
