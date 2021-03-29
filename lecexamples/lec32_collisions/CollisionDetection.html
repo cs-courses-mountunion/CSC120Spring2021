@@ -4,6 +4,9 @@
 
 <body>
 
+<table width="100%" border="1">
+<tr>
+<td width="45%" valign="top">
 <h1> to be added to Hero class: </h1>
 
 <h2><pre>
@@ -29,6 +32,18 @@
         return answer;
     } // end of isTouchingObstacle()
 </pre></h2>
+</td>
+
+<td valign="top">
+<img src="CollisionRight.png" /> &nbsp; &nbsp; Hero is RIGHT of Obstacle &nbsp; (<code>obst.getRightEdge() &lt; over</code>)<hr/><br/>
+<img src="CollisionLeft.png" /> &nbsp; &nbsp; Hero is LEFT of Obstacle &nbsp; (<code>obst.getLeftEdge() &gt; over + width</code>)<hr/><br/>
+<img src="CollisionUnder.png" /> &nbsp; &nbsp; Hero is BELOW Obstacle &nbsp; (<code>obst.getBottomEdge() &lt; down</code>)<hr/><br/>
+<img src="CollisionOver.png" /> &nbsp; &nbsp; Hero is ABOVE Obstacle &nbsp; (<code>obst.getTopEdge() &gt; down + height</code>)<hr/><br/>
+</td>
+</tr>
+</table>
+
+<p>&nbsp;</p>
 
 <h1> to be added to Obstacle class: </h1>
 
