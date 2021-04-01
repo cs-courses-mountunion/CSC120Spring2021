@@ -21,10 +21,10 @@ public class MUPanel extends JPanel {
 //***** NOTE: IF A PERSON HAS NOT YET DIED, USE 0 AS THE YEAR OF DEATH *****		
 //  SecGen # 0: Gladwyn Jebb died in 1996 and was from the United Kingdom
 //  SecGen # 1: Trygve Lie died in 1968 and was from Norway
-//  SecGen # 2: Kofi Annan died in 2018 and is from Ghana
+//  SecGen # 2: Kofi Annan died in 2018 and was from Ghana
 //  SecGen # 3: U Thant died in 1974 and was from Burma
 //  SecGen # 4: Antonio Guterres is still alive and is from Portugal
-//  SecGen # 5: Javier Perez de Cuellar died in 2020 and is from Peru
+//  SecGen # 5: Javier Perez de Cuellar died in 2020 and was from Peru
 //  SecGen # 6: Ban Ki-moon is still alive and is from South Korea
 //  SecGen # 7: Boutros Boutros-Galli died in 2016 and was from Egypt
         
