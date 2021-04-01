@@ -65,7 +65,7 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
 <span class="line-number"> 44</span>         
 <span class="line-number"> 45</span>         
 <span class="line-number"> 46</span>         <span class="comment">// find max</span>
-<span class="line-number"> 47</span>         Double max = arr[0];
+<span class="line-number"> 47</span>         Double max = Double.MIN_VALUE;
 <span class="line-number"> 48</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i = 0; i &lt; arr.length; i++) {
 <span class="line-number"> 49</span>             <span class="keyword-directive">if</span> (arr[i] &gt; max) {
 <span class="line-number"> 50</span>                 max = arr[i];
@@ -77,7 +77,7 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
 <span class="line-number"> 56</span>         
 <span class="line-number"> 57</span>         
 <span class="line-number"> 58</span>         <span class="comment">// find min</span>
-<span class="line-number"> 59</span>         Double min = arr[0];
+<span class="line-number"> 59</span>         Double min = Double.MAX_VALUE;
 <span class="line-number"> 60</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> i = 0; i &lt; arr.length; i++) {
 <span class="line-number"> 61</span>             <span class="keyword-directive">if</span> (arr[i] &lt; min) {
 <span class="line-number"> 62</span>                 min = arr[i];
@@ -118,8 +118,8 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
 <span class="line-number"> 96</span>         Double avgWins;
 <span class="line-number"> 97</span>         
 <span class="line-number"> 98</span>         totWins = 0;
-<span class="line-number"> 99</span>         minWins = team[0].getWins();
-<span class="line-number">100</span>         maxLosses = team[0].getLosses();
+<span class="line-number"> 99</span>         minWins = Integer.MAX_VALUE;
+<span class="line-number">100</span>         maxLosses = Integer.MIN_VALUE;
 <span class="line-number">101</span>         
 <span class="line-number">102</span>         <span class="keyword-directive">for</span> (<span class="keyword-directive">int</span> t = 0; t &lt; team.length; t++) {
 <span class="line-number">103</span>             totWins += team[t].getWins();
