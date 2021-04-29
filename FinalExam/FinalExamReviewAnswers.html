@@ -41,9 +41,9 @@ Problem 9:
 <ol type="a">
     <li>
 <pre>
-    public boolean parameterIsAQuestion( String text ) {
+    public Boolean parameterIsAQuestion( String text ) {
 	
-        int positionOfLastChar = text.length() - 1;
+        Integer positionOfLastChar = text.length() - 1;
 	
         if ( text.charAt( positionOfLastChar ) == '?' ) {
             return true;
@@ -55,7 +55,7 @@ Problem 9:
 	</li>
     <li> There are several different ways to solve this problem; one solution would be:
 <pre>
-    public boolean parameterContainsAnInternalSpace( String text ) {
+    public Boolean parameterContainsAnInternalSpace( String text ) {
 
         String middlePart = text.substring(1, text.length()-1 );
 	

@@ -15,9 +15,8 @@
  * color, which is a Color 
  * price, which is a double 
  * hasGears, which is a boolean 
- * There are two constructors. 
+ * There is one constructor: 
  * A 3-parameter constructor that uses the 3 parameters to initialize the 3 data members. 
- * A no-parameter constructor that creates an orange bike, that does not have gears, and costs 87.50. 
  * Write a getColor method, a setColor method, a getPrice method, and a setPrice method.
 
  * Write a toString method that (as usual) returns a String describing the bike in terms of the data members. The description must label the values returned. For example it might return
@@ -29,11 +28,11 @@
 import java.awt.*;
 
 public class Bike {
-    private boolean hasGears;
-    private double price;
+    private Boolean hasGears;
+    private Double price;
     private Color color;
 
-    public Bike( boolean h, double p, Color c) {
+    public Bike( Boolean h, Double p, Color c) {
        
         hasGears = h;
         setPrice(p);
@@ -41,18 +40,12 @@ public class Bike {
         
     } // end of constructor
     
-    public Bike() {
-        hasGears = true;
-        price = 87.50;
-        color = Color.ORANGE;
-    } // end of constructor
-  
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     } // end of getPrice()
     
-    public void setPrice(double p) {
-        if (p < 0) {
+    public void setPrice(Double p) {
+        if (p &lt; 0) {
             p = 0;
         }
         if (p > 1000) {
@@ -96,7 +89,7 @@ public class MUPanel extends JPanel {
         setPreferredSize( new Dimension( 600, 400) );
         
         //These lines of code "test" the Bike class definition
-        mine = new Bike();
+        mine = new Bike(true, 79.95, Color.GREEN);
         hers = new Bike( false, 99.99, Color.RED );
         
         System.out.println( hers.getColor() );
@@ -121,8 +114,8 @@ public class MUPanel extends JPanel {
 //
 // add100 method that has no parameters and returns nothing. This method assumes we are in a class that has a private data member called size, and this method adds 100 to the current value of size.
 
-    public int getSmallest( int firstNum, int secondNum ) {
-        if ( firstNum < secondNum ) {
+    public Integer getSmallest( Integer firstNum, Integer secondNum ) {
+        if ( firstNum &lt; secondNum ) {
             return firstNum;
         }
         else {
@@ -131,7 +124,7 @@ public class MUPanel extends JPanel {
     } // end of getSmallest()
     
 	
-    public boolean isLarge( int num ) {
+    public Boolean isLarge( Integer num ) {
         if (num > 500) {
             return true;
         }
@@ -141,7 +134,7 @@ public class MUPanel extends JPanel {
     } // end of isLarge()
     
 	
-    int size = 27;
+    Integer size = 27;
     public void add100() {
         size = size + 100;
     } // end of add100() 
