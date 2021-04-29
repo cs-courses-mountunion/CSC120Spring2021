@@ -6,15 +6,13 @@ import java.awt.*;
 
 public class Product {
     
-    private int stockNumber;
+    private Integer stockNumber, over, down;
     private String name;
-    private boolean taxable;
-    private double price;
+    private Boolean taxable;
+    private Double price;
     private Color productColor;
-    private int over;
-    private int down;
     
-    public Product(int sn, String n, boolean t, double p, Color prodColor) {
+    public Product(Integer sn, String n, Boolean t, Double p, Color prodColor) {
         stockNumber = sn;
         name = n;
         taxable = t;
@@ -46,7 +44,7 @@ public class Product {
         down = (int) (380 * Math.random());
     } // end of setRandomOverAndDown()
     
-    public int getStockNumber() {
+    public Integer getStockNumber() {
         return stockNumber;
     } // end of getStockNumber()
     
@@ -54,11 +52,11 @@ public class Product {
         return name;
     } // end of getName()
     
-    public boolean getTaxable() {
+    public Boolean getTaxable() {
         return taxable;
     } // end of getTaxable()
     
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     } // end of getPrice()
     
